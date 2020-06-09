@@ -8,6 +8,9 @@
 
 import UIKit
 
+//変数の宣言(「CountTimer」という名前の箱(小数しか入らない箱(Float型)を作る)
+var CountTimer:Float = 0.0
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
