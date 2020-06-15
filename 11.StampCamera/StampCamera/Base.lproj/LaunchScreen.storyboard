@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="splash-iphone-ios8-47" translatesAutoresizingMaskIntoConstraints="NO" id="a6D-1R-eJA">
+                                <rect key="frame" x="-46" y="-115" width="506" height="1126"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a6D-1R-eJA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-115" id="AUL-Ex-q3p"/>
+                            <constraint firstAttribute="bottom" secondItem="a6D-1R-eJA" secondAttribute="bottom" constant="-115" id="U9a-Qg-Vgy"/>
+                            <constraint firstAttribute="trailing" secondItem="a6D-1R-eJA" secondAttribute="trailing" constant="-46" id="lxv-dO-jdF"/>
+                            <constraint firstItem="a6D-1R-eJA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-46" id="zfo-LE-vkr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash-iphone-ios8-47" width="750" height="1334"/>
+    </resources>
+</document>
