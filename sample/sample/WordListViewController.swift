@@ -18,13 +18,13 @@ class WordListViewController: UIViewController, UITableViewDataSource, UITableVi
         let realm = try! Realm()
         return realm.objects(Word.self).sorted(byKeyPath: "name")
     }
-    
-    var actionType = "" // アクション種別（NEW or UPDATE）
-    var selectedWord:Word! // 選択した単語
+    // アクション種別（NEW or UPDATE）
+    var actionType = ""
+    // 選択した単語
+    var selectedWord:Word!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -72,6 +72,8 @@ class WordListViewController: UIViewController, UITableViewDataSource, UITableVi
         selectedWord = wordItems?[indexPath.row]
         self.performSegue(withIdentifier: "toDetail", sender: selectedWord)
     }
+    
+    
     
 
     /*

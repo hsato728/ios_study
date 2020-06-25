@@ -11,13 +11,16 @@ import UIKit
 class Problem: NSObject {
     //問題
     var question = String()
-    //解説
+    //説明文
     var meaning = String()
+    //完了フラグ
+    var isComplete = false
     
     //問題と解説を格納
-    func setQ(q: String, m: String) {
+    func setQ(q: String, m: String, c:Bool) {
         question = q
         meaning = m
+        isComplete = c
     }
     
     //問題を読み出し
@@ -27,6 +30,10 @@ class Problem: NSObject {
     //解説を読み出し
     func getM() -> String {
         return meaning
+    }
+    //完了フラグを読み出し
+    func getC() -> Bool {
+        return isComplete
     }
 
 }

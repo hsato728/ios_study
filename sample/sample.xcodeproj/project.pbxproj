@@ -17,7 +17,6 @@
 		06677F5D24A1E4D9005B0FF5 /* WordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06677F5C24A1E4D9005B0FF5 /* WordDetailViewController.swift */; };
 		06677F5F24A1E7FC005B0FF5 /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06677F5E24A1E7FC005B0FF5 /* WordListViewController.swift */; };
 		06677F6124A3136F005B0FF5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06677F6024A3136F005B0FF5 /* ResultViewController.swift */; };
-		06677F6324A31638005B0FF5 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06677F6224A31638005B0FF5 /* Problem.swift */; };
 		CD17E018686CEEE72BAA225E /* Pods_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AED3AC3C6228D976D562B3 /* Pods_sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		06677F5C24A1E4D9005B0FF5 /* WordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailViewController.swift; sourceTree = "<group>"; };
 		06677F5E24A1E7FC005B0FF5 /* WordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListViewController.swift; sourceTree = "<group>"; };
 		06677F6024A3136F005B0FF5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		06677F6224A31638005B0FF5 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		30AED3AC3C6228D976D562B3 /* Pods_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85352807B5E50C36E52144FA /* Pods-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample.debug.xcconfig"; path = "Target Support Files/Pods-sample/Pods-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		CE73F930B88A8EABCE5FE9C0 /* Pods-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample.release.xcconfig"; path = "Target Support Files/Pods-sample/Pods-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				06677F4A24A1A021005B0FF5 /* ViewController.swift */,
 				06677F4C24A1A021005B0FF5 /* Main.storyboard */,
 				06677F6024A3136F005B0FF5 /* ResultViewController.swift */,
-				06677F6224A31638005B0FF5 /* Problem.swift */,
 				06677F5C24A1E4D9005B0FF5 /* WordDetailViewController.swift */,
 				06677F5E24A1E7FC005B0FF5 /* WordListViewController.swift */,
 				06677F4F24A1A024005B0FF5 /* Assets.xcassets */,
@@ -222,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				06677F4B24A1A021005B0FF5 /* ViewController.swift in Sources */,
-				06677F6324A31638005B0FF5 /* Problem.swift in Sources */,
 				06677F5D24A1E4D9005B0FF5 /* WordDetailViewController.swift in Sources */,
 				06677F6124A3136F005B0FF5 /* ResultViewController.swift in Sources */,
 				06677F5F24A1E7FC005B0FF5 /* WordListViewController.swift in Sources */,
