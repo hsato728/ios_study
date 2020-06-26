@@ -76,6 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="暗記カード" id="EPT-iO-leB">
+                        <barButtonItem key="leftBarButtonItem" title="復習" id="r16-BR-mh1">
+                            <connections>
+                                <action selector="reviewWithSender:" destination="BYZ-38-t0r" id="dTJ-1V-y9E"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="単語リスト" image="book" catalog="system" id="Anc-Wa-gxA">
                             <connections>
                                 <segue destination="1i5-YC-cDm" kind="show" identifier="toList" id="NcS-ez-Rli"/>

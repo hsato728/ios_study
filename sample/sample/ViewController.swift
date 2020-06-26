@@ -28,23 +28,42 @@ class ViewController: UIViewController {
         let realm = try! Realm()
         return realm.objects(Word.self).sorted(byKeyPath: "name")
     }
+    // review アイテムコレクション
+    var reviewItems:Results<Word>?{
+        let realm = try! Realm()
+        return realm.objects(Word.self).sorted(byKeyPath: "name")
+    }
     //説明文
     var word = Word()
+    //解答数
+    var anseredProblems = Int()
+    //ランダム数列
+    var l: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //リストをリセット
+        l = []
         //提示問題数を10問とする
         totalProblems = min(10, wordItems!.count)
         
-        //現在の問題番号と正答数を0にする
+        //現在の問題番号と正答数と解答数を0にする
         currentProblem = 0
         correctAnswers = 0
+        anseredProblems = 0
+        
+        //ランダムな数列を作成
+        for i in 0..<wordItems!.count {
+            l.append(i)
+        }
+        l.shuffle()
+        print(l)
         
         //wordItemsの最初の要素の単語を画面にセット
-        word = (wordItems?[currentProblem])! as Word
+        word = (wordItems?[l[currentProblem]])! as Word
         problemText.text = word.name
         problemDesc.text = ""
         
@@ -58,7 +77,7 @@ class ViewController: UIViewController {
     //結果表示画面へのSegueの発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //正答率を算出
-        let percentage = correctAnswers * 100 / totalProblems
+        let percentage = correctAnswers * 100 / max(1, anseredProblems)
         
         //ResultViewController（RVC）のインスタンスを作成し、
         //RVCクラスのメンバー変数である「correctPercentage」に値を渡す
@@ -111,7 +130,6 @@ class ViewController: UIViewController {
     
     //「次へ」ボタンが押された場合
     @IBAction func nextWord(sender: Any) {
-        //テスト用
         print(word.isComplete)
         //次の問題を提示
         if reviewLabel.isHidden == true {
@@ -125,25 +143,35 @@ class ViewController: UIViewController {
         nextWord.isHidden = true
     }
     
+    //「復習」ボタンが押された場合
+    @IBAction func review(sender: Any) {
+        print("復習開始")
+        //現在の問題番号と解答数を0にする
+        currentProblem = 0
+        anseredProblems = 0
+        //復習ラベルを表示
+        reviewLabel.isHidden = false
+        //復習開始
+        review()
+    }
+    
     //次の問題提示 or 全問終わっていたら結果表画面へ
     func nextProblem() {
         print("next")
         //currentProblemを繰り上げ
         currentProblem += 1
+        //解答数を1追加
+        anseredProblems += 1
         //これまで出題した問題が、提示問題数に達していない場合
         if currentProblem < totalProblems {
             //次の問題の問題文を提示
-            word = (wordItems?[currentProblem])! as Word
+            word = (wordItems?[l[currentProblem]])! as Word
             problemText.text = word.name
             problemDesc.text = ""
             //全問題解き終わった場合
         } else {
-            //現在の問題番号と正答数を0にする
-            currentProblem = 0
-            //復習ラベルを表示
-            reviewLabel.isHidden = false
-            //復習メソッドを起動
-            review()
+            //結果表示画面へのSegueを始動
+            self.performSegue(withIdentifier: "toResultView", sender:self)
         }
     }
     
@@ -153,13 +181,16 @@ class ViewController: UIViewController {
         if currentProblem < totalProblems {
             //次の問題の問題文を提示
             word = (wordItems?[currentProblem])! as Word
-            print(word.isComplete, "完了フラグ")
+            print(word.isComplete)
             //currentProblemを繰り上げ
             currentProblem += 1
             //暗記済みなら飛ばす
             if word.isComplete == true {
                 review()
             } else {
+                //解答数を1追加
+                anseredProblems += 1
+                //単語を表示し説明をリセット
                 problemText.text = word.name
                 problemDesc.text = ""
             }
